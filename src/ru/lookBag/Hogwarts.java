@@ -1,13 +1,11 @@
 package ru.lookBag;
 
-import java.security.Provider;
-
-public class Hogwarts {
+public abstract class Hogwarts {
     private String firstName;
     private String secondName;
     private final String fullName;
-    private int powerMagic = 0;
-    private int transgress = 0;
+    private int powerMagic;
+    private int transgress;
 
     public Hogwarts(String firstName, String secondName, int powerMagic, int transgress) {
         this.firstName = firstName;
@@ -53,50 +51,13 @@ public class Hogwarts {
         this.transgress = ServiceHogwarts.checkRangeHundred(transgress);
     }
 
-    public static void descriptionStudent (Gryffindor student){
-        System.out.println(student.getFullName() + ":");
-        System.out.println("Сила магии: " + student.getPowerMagic());
-        System.out.println("Расстояние трансгресии: " + student.getTransgress());
-        System.out.println("Храбрость: " + student.getBravery());
-        System.out.println("Честь: " + student.getHonor());
-        System.out.println("Благородство: " + student.getNobility());
-        System.out.println();
+    public void getStudentDescription (){
+        System.out.println(getFullName() + ":");
+        System.out.println("Сила магии: " + getPowerMagic());
+        System.out.println("Расстояние трансгресии: " + getTransgress());
     }
 
-    public static void descriptionStudent (Slytherin student){
-        System.out.println(student.getFullName() + ":");
-        System.out.println("Сила магии: " + student.getPowerMagic());
-        System.out.println("Расстояние трансгресии: " + student.getTransgress());
-        System.out.println("Амбициозность: " + student.getAmbition());
-        System.out.println("Решительность: " + student.getDetermination());
-        System.out.println("Хитрость: " + student.getTrick());
-        System.out.println("Жажда власти: " + student.getLustForPower());
-        System.out.println("Находчивость: " + student.getResourcefulness());
-        System.out.println();
-    }
-
-    public static void descriptionStudent (Hufflepuff student){
-        System.out.println(student.getFullName() + ":");
-        System.out.println("Сила магии: " + student.getPowerMagic());
-        System.out.println("Расстояние трансгресии: " + student.getTransgress());
-        System.out.println("Трудолюбие: " + student.getIndustriousness());
-        System.out.println("Честность: " + student.getHonesty());
-        System.out.println("Верность: " + student.getLoyalty());
-        System.out.println();
-    }
-
-    public static void descriptionStudent (Ravenclaw student){
-        System.out.println(student.getFullName() + ":");
-        System.out.println("Сила магии: " + student.getPowerMagic());
-        System.out.println("Расстояние трансгресии: " + student.getTransgress());
-        System.out.println("Ум: " + student.getMind());
-        System.out.println("Творчество: " + student.getCreativity());
-        System.out.println("Мудрость: " + student.getWisdom());
-        System.out.println("Остроумие: " + student.getWit());
-        System.out.println();
-    }
-
-    public static void comparisonPowerMagic(Hogwarts student1, Hogwarts student2){
+    public static void comparePowerMagic(Hogwarts student1, Hogwarts student2){
         if(student1.getPowerMagic() > student2.getPowerMagic()){
             System.out.println(student1.getFullName() + " обладает большей мощностью магии, чем " + student2.getFullName());
             System.out.println();
@@ -109,7 +70,7 @@ public class Hogwarts {
         }
     }
 
-    public static void comparisonTransgress(Hogwarts student1, Hogwarts student2){
+    public static void compareTransgress(Hogwarts student1, Hogwarts student2){
         if(student1.getTransgress() > student2.getTransgress()){
             System.out.println(student1.getFullName() + " обладает большей мощностью магии, чем " + student2.getFullName());
             System.out.println();

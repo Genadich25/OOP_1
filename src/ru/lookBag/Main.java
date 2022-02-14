@@ -16,28 +16,28 @@ public class Main {
         Ravenclaw padmaPatil = new Ravenclaw("Падма", "Патил", 80, 76, 78, 75, 80, 93);
         Ravenclaw marcusBelby = new Ravenclaw("Маркус", "Белби", 82, 78, 79, 85, 91, 74);
 
-        Hogwarts.descriptionStudent(garryPotter);
-        Hogwarts.descriptionStudent(dracoMalfoy);
-        Hogwarts.descriptionStudent(zachariahSmith);
-        Hogwarts.descriptionStudent(zhouChang);
+        garryPotter.getStudentDescription();
+        dracoMalfoy.getStudentDescription();
+        zachariahSmith.getStudentDescription();
+        zhouChang.getStudentDescription();
 
-        Hogwarts.comparisonPowerMagic(ronWeasley, hermioneGranger);
-        Hogwarts.comparisonTransgress(marcusBelby,grahamMontague);
+        Hogwarts.comparePowerMagic(ronWeasley, hermioneGranger);
+        Hogwarts.compareTransgress(marcusBelby,grahamMontague);
 
-        Gryffindor.comparison(garryPotter, ronWeasley);
-        Gryffindor.comparison(garryPotter, hermioneGranger);
-        Gryffindor.comparison(hermioneGranger, ronWeasley);
+        Gryffindor.compareGryffindorStudents(garryPotter, ronWeasley);
+        Gryffindor.compareGryffindorStudents(garryPotter, hermioneGranger);
+        Gryffindor.compareGryffindorStudents(hermioneGranger, ronWeasley);
 
-        Hufflepuff.comparison(cedricDiggory, justinFinchFletchley);
-        Hufflepuff.comparison(cedricDiggory, zachariahSmith);
-        Hufflepuff.comparison(justinFinchFletchley, zachariahSmith);
+        Hufflepuff.compareHufflepuffStudents(cedricDiggory, justinFinchFletchley);
+        Hufflepuff.compareHufflepuffStudents(cedricDiggory, zachariahSmith);
+        Hufflepuff.compareHufflepuffStudents(justinFinchFletchley, zachariahSmith);
 
-        Ravenclaw.comparison(zhouChang, padmaPatil);
-        Ravenclaw.comparison(zhouChang, marcusBelby);
-        Ravenclaw.comparison(padmaPatil, marcusBelby);
+        Ravenclaw.compareRavenclawStudents(zhouChang, padmaPatil);
+        Ravenclaw.compareRavenclawStudents(zhouChang, marcusBelby);
+        Ravenclaw.compareRavenclawStudents(padmaPatil, marcusBelby);
 
-        Slytherin.comparison(dracoMalfoy, grahamMontague);
-        Slytherin.comparison(dracoMalfoy, gregoryGoyle);
-        Slytherin.comparison(grahamMontague, gregoryGoyle);
+        Slytherin.compareSlytherinStudents(dracoMalfoy, grahamMontague);
+        Slytherin.compareSlytherinStudents(dracoMalfoy, gregoryGoyle);
+        Slytherin.compareSlytherinStudents(grahamMontague, gregoryGoyle);
     }
 }

@@ -1,10 +1,10 @@
 package ru.lookBag;
 
 public class Ravenclaw extends Hogwarts{
-    private int mind= 0;
-    private int wisdom = 0;
-    private int wit = 0;
-    private int creativity = 0;
+    private int mind;
+    private int wisdom;
+    private int wit;
+    private int creativity;
 
     public Ravenclaw(String firstName, String secondName, int powerMagic, int transgress, int mind, int wisdom, int wit, int creativity) {
         super(firstName, secondName, powerMagic, transgress);
@@ -46,7 +46,16 @@ public class Ravenclaw extends Hogwarts{
         this.creativity = ServiceHogwarts.checkRangeHundred(creativity);
     }
 
-    public static void comparison(Ravenclaw student1, Ravenclaw student2){
+    public void getStudentDescription (){
+        super.getStudentDescription();
+        System.out.println("Ум: " + getMind());
+        System.out.println("Творчество: " + getCreativity());
+        System.out.println("Мудрость: " + getWisdom());
+        System.out.println("Остроумие: " + getWit());
+        System.out.println();
+    }
+
+    public static void compareRavenclawStudents(Ravenclaw student1, Ravenclaw student2){
         if(student1.getMind() > student2.getMind()){
             System.out.println(student1.getFullName() + " обладает большим умом, чем " + student2.getFullName());
         } else if(student1.getMind() < student2.getMind()){

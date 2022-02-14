@@ -1,11 +1,11 @@
 package ru.lookBag;
 
 public class Slytherin extends Hogwarts {
-    private int trick = 0;
-    private int determination = 0;
-    private int ambition = 0;
-    private int resourcefulness = 0;
-    private int lustForPower = 0;
+    private int trick;
+    private int determination;
+    private int ambition;
+    private int resourcefulness;
+    private int lustForPower;
 
     public Slytherin(String firstName, String secondName, int powerMagic, int transgress, int trick, int determination, int ambition, int resourcefulness, int lustForPower) {
         super(firstName, secondName, powerMagic, transgress);
@@ -56,7 +56,17 @@ public class Slytherin extends Hogwarts {
         this.lustForPower = ServiceHogwarts.checkRangeHundred(lustForPower);
     }
 
-    public static void comparison(Slytherin student1, Slytherin student2){
+    public void getStudentDescription(){
+        super.getStudentDescription();
+        System.out.println("Амбициозность: " + getAmbition());
+        System.out.println("Решительность: " + getDetermination());
+        System.out.println("Хитрость: " + getTrick());
+        System.out.println("Жажда власти: " + getLustForPower());
+        System.out.println("Находчивость: " + getResourcefulness());
+        System.out.println();
+    }
+
+    public static void compareSlytherinStudents(Slytherin student1, Slytherin student2){
         if(student1.getTrick() > student2.getTrick()){
             System.out.println(student1.getFullName() + " обладает большей хитростью, чем " + student2.getFullName());
         } else if(student1.getTrick() < student2.getTrick()){

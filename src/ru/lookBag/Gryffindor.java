@@ -1,10 +1,11 @@
 package ru.lookBag;
 
 public class Gryffindor extends Hogwarts{
-    private int nobility = 0;
-    private int honor = 0;
-    private int bravery = 0;
+    private int nobility;
+    private int honor;
+    private int bravery;
 
+    // Не совсем понял какую логику вынести в отдельный метод, проверка от 0 до 100 у меня находится в отдельном классе
     public Gryffindor(String firstName, String secondName, int powerMagic, int transgress, int nobility, int honor, int bravery) {
         super(firstName, secondName, powerMagic, transgress);
         this.nobility = ServiceHogwarts.checkRangeHundred(nobility);
@@ -36,7 +37,15 @@ public class Gryffindor extends Hogwarts{
         this.bravery = ServiceHogwarts.checkRangeHundred(bravery);
     }
 
-    public static void comparison(Gryffindor student1, Gryffindor student2){
+    public void getStudentDescription (){
+        super.getStudentDescription();
+        System.out.println("Храбрость: " + getBravery());
+        System.out.println("Честь: " + getHonor());
+        System.out.println("Благородство: " + getNobility());
+        System.out.println();
+    }
+
+    public static void compareGryffindorStudents(Gryffindor student1, Gryffindor student2){
         if(student1.getNobility() > student2.getNobility()){
             System.out.println(student1.getFullName() + " обладает большей благородностью, чем " + student2.getFullName());
         } else if(student1.getNobility() < student2.getNobility()){

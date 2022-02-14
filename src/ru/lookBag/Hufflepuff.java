@@ -1,9 +1,9 @@
 package ru.lookBag;
 
 public class Hufflepuff extends Hogwarts{
-    private int industriousness = 0;
-    private int loyalty = 0;
-    private int honesty = 0;
+    private int industriousness;
+    private int loyalty;
+    private int honesty;
 
     public Hufflepuff(String firstName, String secondName, int powerMagic, int transgress, int industriousness, int loyalty, int honesty) {
         super(firstName, secondName, powerMagic, transgress);
@@ -37,7 +37,15 @@ public class Hufflepuff extends Hogwarts{
         this.honesty = ServiceHogwarts.checkRangeHundred(honesty);
     }
 
-    public static void comparison(Hufflepuff student1, Hufflepuff student2){
+    public void getStudentDescription (){
+        super.getStudentDescription();
+        System.out.println("Трудолюбие: " + getIndustriousness());
+        System.out.println("Честность: " + getHonesty());
+        System.out.println("Верность: " + getLoyalty());
+        System.out.println();
+    }
+
+    public static void compareHufflepuffStudents(Hufflepuff student1, Hufflepuff student2){
         if(student1.getIndustriousness() > student2.getIndustriousness()){
             System.out.println(student1.getFullName() + " обладает большим трудолюбием, чем " + student2.getFullName());
         } else if(student1.getIndustriousness() < student2.getIndustriousness()){
